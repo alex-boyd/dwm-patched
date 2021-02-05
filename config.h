@@ -2,19 +2,20 @@
 
 /* appearance */
 static const char *fonts[] = {
-	"monospace:size=10"
+	"Terminus:antialias=false"
 };
-static const char dmenufont[]       = "monospace:size=10";
+//static const char dmenufont[]       = "monospace:size=10";
+static const char dmenufont[]       = "Terminus:antialias=false";
 static const char normbordercolor[] = "#444444";
 static const char normbgcolor[]     = "#222222";
 static const char normfgcolor[]     = "#bbbbbb";
-static const char selbordercolor[]  = "#337A3D";
-static const char selbgcolor[]      = "#337A3D";
+static const char selbordercolor[]  = "#cc5e86"; //337A3D
+static const char selbgcolor[]      = "#cc5e86"; //AB4133
 static const char selfgcolor[]      = "#eeeeee";
-static const unsigned int borderpx  = 4;        /* border pixel of windows */
-static const unsigned int gappx     = 16;
+static const unsigned int borderpx  = 4;       /* border pixel of windows */
+static const unsigned int gappx     = 12;
 static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
+static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
 /* tagging */
@@ -27,13 +28,14 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            0,           -1 },
-	{ "Firefox",  NULL,       NULL,       0,       0,           -1 },
+	{ "Firefox",  NULL,       NULL,       0,            0,           -1 },
+	{ "Aseprite", NULL,       NULL,       0,            0,           -1 },
 };
 
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
@@ -57,6 +59,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "st", NULL };
+//static const char *termcmd[]  = { "xterm", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
